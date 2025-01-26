@@ -1,0 +1,47 @@
+[gd_scene load_steps=8 format=3 uid="uid://bnlww8e85gwpw"]
+
+[ext_resource type="FontFile" uid="uid://cdso48ejorpci" path="res://fonts/Bubble3D.ttf" id="1_21m02"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xx0yn"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yxtsy"]
+bg_color = Color(0, 0.546041, 0.505928, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_41yja"]
+bg_color = Color(0, 0.443137, 0.654902, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mp22x"]
+bg_color = Color(0, 0.693705, 0.633901, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x43ip"]
+bg_color = Color(0, 0.478431, 0.627451, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hm2s0"]
+bg_color = Color(2.98411e-06, 0.67281, 0.775121, 1)
+
+[node name="GameOver" type="CanvasLayer"]
+
+[node name="Button" type="Button" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -98.0
+offset_top = -24.0
+offset_right = 98.0
+offset_bottom = 24.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_21m02")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/hover_mirrored = SubResource("StyleBoxFlat_xx0yn")
+theme_override_styles/hover = SubResource("StyleBoxFlat_yxtsy")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxFlat_41yja")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_mp22x")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_x43ip")
+theme_override_styles/normal = SubResource("StyleBoxFlat_hm2s0")
+keep_pressed_outside = true
+text = "restart"

@@ -1,0 +1,54 @@
+[gd_scene load_steps=9 format=3 uid="uid://doykca2vf3ym4"]
+
+[ext_resource type="Script" path="res://blobs.gd" id="1_ex86v"]
+[ext_resource type="Texture2D" uid="uid://lqakt1ceca1p" path="res://art/crab/Blobfish Spritesheet.png" id="1_u1br6"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w385l"]
+atlas = ExtResource("1_u1br6")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fi6qq"]
+atlas = ExtResource("1_u1br6")
+region = Rect2(128, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mgeg4"]
+atlas = ExtResource("1_u1br6")
+region = Rect2(128, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_37fx3"]
+atlas = ExtResource("1_u1br6")
+region = Rect2(128, 96, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4yj2q"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w385l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fi6qq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mgeg4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_37fx3")
+}],
+"loop": true,
+"name": &"nada",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_v0kdn"]
+
+[node name="blobs" type="Area2D"]
+script = ExtResource("1_ex86v")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_4yj2q")
+animation = &"nada"
+frame_progress = 0.490155
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, -1)
+shape = SubResource("CircleShape2D_v0kdn")

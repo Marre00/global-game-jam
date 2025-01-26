@@ -1,0 +1,46 @@
+[gd_scene load_steps=7 format=3 uid="uid://c38t1x48j0hcw"]
+
+[ext_resource type="Script" path="res://nuvem.gd" id="1_17uom"]
+[ext_resource type="Texture2D" uid="uid://46dxl2a5ju60" path="res://art/crab/Clouds.png" id="1_kvigt"]
+[ext_resource type="Texture2D" uid="uid://dwkyverapq11q" path="res://art/crab/Clouds1.png" id="2_cxx5m"]
+[ext_resource type="Texture2D" uid="uid://choe3b5bf7nqp" path="res://art/crab/Clouds2.png" id="3_aev7i"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hfpic"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_y4yb6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_cxx5m")
+}],
+"loop": true,
+"name": &"dia",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_aev7i")
+}],
+"loop": true,
+"name": &"noite",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_kvigt")
+}],
+"loop": true,
+"name": &"tarde",
+"speed": 5.0
+}]
+
+[node name="nuvem" type="Area2D"]
+scale = Vector2(2, 2)
+script = ExtResource("1_17uom")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_hfpic")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_y4yb6")
+animation = &"dia"

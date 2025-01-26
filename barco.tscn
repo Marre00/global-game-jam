@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://c8amqws5qpkqd"]
+
+[ext_resource type="Texture2D" uid="uid://7yho8mqqk2jf" path="res://art/boat-front.png" id="1_wslt3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gvbuc"]
+size = Vector2(66, 94)
+
+[node name="Barco" type="Area2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_wslt3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 7)
+shape = SubResource("RectangleShape2D_gvbuc")

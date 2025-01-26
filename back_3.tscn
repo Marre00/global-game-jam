@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://dqeuhucnds3i1"]
+
+[ext_resource type="Texture2D" uid="uid://donk5wwp2w6rn" path="res://art/crab/back-sand.png" id="1_eelrj"]
+
+[node name="back3" type="Area2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_repeat = 3
+texture = ExtResource("1_eelrj")
+region_enabled = true
+region_rect = Rect2(0, 0, 224, 112)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+texture_repeat = 3
+scale = Vector2(4, 4)

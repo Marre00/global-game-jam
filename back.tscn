@@ -1,0 +1,47 @@
+[gd_scene load_steps=7 format=3 uid="uid://dmekyn268ee2x"]
+
+[ext_resource type="Script" path="res://back.gd" id="1_n5s8k"]
+[ext_resource type="Texture2D" uid="uid://daf77w8jvj2ol" path="res://art/crab/Back.png" id="2_8prwy"]
+[ext_resource type="Texture2D" uid="uid://njybr0j8mjd2" path="res://art/crab/Back1.png" id="2_qft73"]
+[ext_resource type="Texture2D" uid="uid://d3irdvfd1li5t" path="res://art/crab/Back2.png" id="3_a3e6f"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ac3he"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_n87t0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_qft73")
+}],
+"loop": true,
+"name": &"dia",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_a3e6f")
+}],
+"loop": true,
+"name": &"noite",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_8prwy")
+}],
+"loop": true,
+"name": &"tarde",
+"speed": 5.0
+}]
+
+[node name="back" type="Area2D"]
+script = ExtResource("1_n5s8k")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_ac3he")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_repeat = 3
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_n87t0")
+animation = &"dia"

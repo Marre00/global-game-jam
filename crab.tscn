@@ -1,0 +1,45 @@
+[gd_scene load_steps=8 format=3 uid="uid://y3522yu8f5cq"]
+
+[ext_resource type="Texture2D" uid="uid://dp0orw4ldl3gf" path="res://art/crab/CrabMoving1.png" id="1_a3sls"]
+[ext_resource type="Script" path="res://crab.gd" id="1_uy2jp"]
+[ext_resource type="Texture2D" uid="uid://bai3cqp30qbvu" path="res://art/crab/CrabMoving2.png" id="2_cn525"]
+[ext_resource type="Texture2D" uid="uid://yugykgpuhi" path="res://art/crab/CrabMoving3.png" id="3_r270v"]
+[ext_resource type="Texture2D" uid="uid://3v4axgxd0vlo" path="res://art/crab/CrabMoving4.png" id="4_6odvi"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rwj5o"]
+size = Vector2(16, 15)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_uckd5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_a3sls")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_cn525")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_r270v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_6odvi")
+}],
+"loop": true,
+"name": &"crab",
+"speed": 5.0
+}]
+
+[node name="crab" type="Area2D"]
+script = ExtResource("1_uy2jp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_rwj5o")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_uckd5")
+animation = &"crab"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(2, 2)
+texture = ExtResource("1_a3sls")

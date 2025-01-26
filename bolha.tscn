@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://dxkk3faoj4fhg"]
+
+[ext_resource type="Texture2D" uid="uid://baot50o88m0bs" path="res://art/pixilart-drawing.png" id="1_12v6x"]
+[ext_resource type="Script" path="res://bolha.gd" id="1_hswet"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_oimt1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_12v6x")
+}],
+"loop": true,
+"name": &"parado",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ypdve"]
+radius = 10.0386
+height = 30.0636
+
+[node name="bolha" type="CharacterBody2D"]
+motion_mode = 1
+platform_on_leave = 2
+script = ExtResource("1_hswet")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_oimt1")
+animation = &"parado"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_ypdve")

@@ -1,0 +1,90 @@
+[gd_scene load_steps=14 format=3 uid="uid://4qqbp1p2cm4o"]
+
+[ext_resource type="Script" path="res://drake_1.gd" id="1_yl5vc"]
+[ext_resource type="Texture2D" uid="uid://oy4qq57aqosp" path="res://art/crab/sunny-dragon-fly.png" id="2_pfqp0"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g2vl0"]
+atlas = ExtResource("2_pfqp0")
+region = Rect2(0, 0, 192, 176)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cf8yc"]
+atlas = ExtResource("2_pfqp0")
+region = Rect2(192, 0, 192, 176)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ocyh2"]
+atlas = ExtResource("2_pfqp0")
+region = Rect2(384, 0, 192, 176)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7hyou"]
+atlas = ExtResource("2_pfqp0")
+region = Rect2(576, 0, 192, 176)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rbptq"]
+atlas = ExtResource("2_pfqp0")
+region = Rect2(768, 0, 192, 176)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_upput"]
+atlas = ExtResource("2_pfqp0")
+region = Rect2(960, 0, 192, 176)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_paful"]
+atlas = ExtResource("2_pfqp0")
+region = Rect2(1152, 0, 192, 176)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3ddkb"]
+atlas = ExtResource("2_pfqp0")
+region = Rect2(1344, 0, 192, 176)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4qdc3"]
+atlas = ExtResource("2_pfqp0")
+region = Rect2(1536, 0, 192, 176)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4ogfo"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g2vl0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cf8yc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ocyh2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7hyou")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rbptq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_upput")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_paful")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3ddkb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4qdc3")
+}],
+"loop": true,
+"name": &"drake",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xw040"]
+size = Vector2(144, 64)
+
+[node name="drake1" type="Area2D"]
+script = ExtResource("1_yl5vc")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_4ogfo")
+animation = &"drake"
+frame_progress = 0.433565
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-8, 22)
+shape = SubResource("RectangleShape2D_xw040")

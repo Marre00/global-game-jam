@@ -1,0 +1,75 @@
+[gd_scene load_steps=12 format=3 uid="uid://c44p563kke1g7"]
+
+[ext_resource type="Script" path="res://piriquito.gd" id="1_4q11g"]
+[ext_resource type="Texture2D" uid="uid://peiwt2d12qc5" path="res://art/flying-creature-cycle-skin.png" id="2_lfeh0"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_28urb"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fcbgd"]
+atlas = ExtResource("2_lfeh0")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y6awo"]
+atlas = ExtResource("2_lfeh0")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jlblj"]
+atlas = ExtResource("2_lfeh0")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5w5ud"]
+atlas = ExtResource("2_lfeh0")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wx3j7"]
+atlas = ExtResource("2_lfeh0")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h61qa"]
+atlas = ExtResource("2_lfeh0")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rupfc"]
+atlas = ExtResource("2_lfeh0")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vwbq0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fcbgd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y6awo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jlblj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5w5ud")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wx3j7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h61qa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rupfc")
+}],
+"loop": true,
+"name": &"piri",
+"speed": 5.0
+}]
+
+[node name="piriquito" type="Area2D"]
+script = ExtResource("1_4q11g")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, 2)
+shape = SubResource("CircleShape2D_28urb")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(-2, 2)
+sprite_frames = SubResource("SpriteFrames_vwbq0")
+animation = &"piri"

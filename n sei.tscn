@@ -1,0 +1,79 @@
+[gd_scene load_steps=13 format=3 uid="uid://djwpxgs2hi705"]
+
+[ext_resource type="Script" path="res://n_sei.gd" id="1_gugy2"]
+[ext_resource type="PackedScene" uid="uid://dmekyn268ee2x" path="res://back.tscn" id="2_gt44p"]
+[ext_resource type="PackedScene" uid="uid://dxkk3faoj4fhg" path="res://bolha.tscn" id="3_2kmoi"]
+[ext_resource type="PackedScene" uid="uid://btggykxivpq72" path="res://jogador.tscn" id="4_ldas7"]
+[ext_resource type="PackedScene" uid="uid://dq6hdnh7rlhor" path="res://chão.tscn" id="4_nke3h"]
+[ext_resource type="PackedScene" uid="uid://c38t1x48j0hcw" path="res://nuvem.tscn" id="4_rm8s7"]
+[ext_resource type="PackedScene" uid="uid://bh5k8jm7m33mu" path="res://hud.tscn" id="6_p08yy"]
+[ext_resource type="PackedScene" uid="uid://c8amqws5qpkqd" path="res://barco.tscn" id="7_50437"]
+[ext_resource type="PackedScene" uid="uid://bnlww8e85gwpw" path="res://game_overs.tscn" id="8_esxuy"]
+[ext_resource type="PackedScene" uid="uid://y3522yu8f5cq" path="res://crab.tscn" id="9_48ril"]
+[ext_resource type="PackedScene" uid="uid://4qqbp1p2cm4o" path="res://drake_1.tscn" id="10_s43ft"]
+[ext_resource type="PackedScene" uid="uid://cbqlq5i14swx5" path="res://fogo.tscn" id="12_nv1mt"]
+
+[node name="Main" type="Node"]
+script = ExtResource("1_gugy2")
+
+[node name="back" parent="." instance=ExtResource("2_gt44p")]
+position = Vector2(-282, 73)
+
+[node name="back2" parent="." instance=ExtResource("2_gt44p")]
+position = Vector2(390, 73)
+
+[node name="back3" parent="." instance=ExtResource("2_gt44p")]
+position = Vector2(1062, 73)
+
+[node name="chão" parent="." instance=ExtResource("4_nke3h")]
+position = Vector2(289, 152)
+
+[node name="chão5" parent="." instance=ExtResource("4_nke3h")]
+position = Vector2(1441, 152)
+
+[node name="chão6" parent="." instance=ExtResource("4_nke3h")]
+position = Vector2(1729, 152)
+scale = Vector2(-1, 1)
+
+[node name="chão2" parent="." instance=ExtResource("4_nke3h")]
+position = Vector2(577, 152)
+rotation = -6.28319
+scale = Vector2(-1, 1)
+
+[node name="chão3" parent="." instance=ExtResource("4_nke3h")]
+position = Vector2(865, 152)
+rotation = -6.28319
+
+[node name="chão4" parent="." instance=ExtResource("4_nke3h")]
+position = Vector2(1153, 152)
+rotation = -6.28319
+scale = Vector2(-1, 1)
+
+[node name="nuvem" parent="." instance=ExtResource("4_rm8s7")]
+position = Vector2(653, 111)
+
+[node name="nuvem2" parent="." instance=ExtResource("4_rm8s7")]
+position = Vector2(1437, 111)
+
+[node name="Barco" parent="." instance=ExtResource("7_50437")]
+position = Vector2(-518, 94)
+
+[node name="crab" parent="." instance=ExtResource("9_48ril")]
+position = Vector2(-28, 48)
+
+[node name="bolha" parent="." instance=ExtResource("3_2kmoi")]
+position = Vector2(-199, 8)
+
+[node name="Jogador" parent="." instance=ExtResource("4_ldas7")]
+position = Vector2(-196, -32)
+
+[node name="HUD" parent="." instance=ExtResource("6_p08yy")]
+
+[node name="GameOver" parent="." instance=ExtResource("8_esxuy")]
+process_mode = 2
+
+[node name="drake1" parent="." instance=ExtResource("10_s43ft")]
+position = Vector2(-787, 575)
+
+[node name="fogo" parent="." instance=ExtResource("12_nv1mt")]
+position = Vector2(-413, 365)
